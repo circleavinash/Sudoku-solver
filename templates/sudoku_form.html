@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/sudoku_style.css')}}" />
+</head>
+<body>
+	<h1>Sudoku solver</h1>
+<form method="POST" action="/sudoku_solve">
+	<table>
+		
+		{% for i in range(9)%}
+			<tr>
+				{%for j in range(9)%}
+					<td>
+						<input type="number" name="{{i}}{{j}}" value="0" min="0" max="9">
+					</td>
+				{%endfor%}	
+		{%endfor%}
+
+	</table>
+	<br>
+
+	<input type="submit" name="submit" value="Solve">
+
+</form>
+</body>
+</html>
